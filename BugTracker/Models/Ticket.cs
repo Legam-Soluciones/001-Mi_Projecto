@@ -10,7 +10,8 @@ namespace BugTracker.Models  // ✅ Asegúrate de que sea el mismo en todos los 
         public string Description { get; set; } = string.Empty;
         public string Status { get; set; } = "Open";
         public int UserId { get; set; }
-        public required User User { get; set; }
+        public User? User { get; set; } // Ahora acepta valores nulos
+
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public ICollection<Comment> Comments { get; set; } = new List<Comment>();
     }
