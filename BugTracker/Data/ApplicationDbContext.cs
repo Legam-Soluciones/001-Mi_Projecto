@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using BugTracker.Models;
 
 namespace BugTracker.Data
 {
@@ -7,9 +8,10 @@ namespace BugTracker.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+
         }
 
-        // Agrega las propiedades DbSet para tus entidades aquí
-        // public DbSet<TuEntidad> TuEntidades { get; set; }
+        // ✅ Mueve la declaración de DbSet fuera del constructor
+        public DbSet<User> Users { get; set; }
     }
 }
