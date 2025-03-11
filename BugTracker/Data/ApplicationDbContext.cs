@@ -35,6 +35,8 @@ namespace BugTracker.Data
                 .WithMany(u => u.Comments)
                 .HasForeignKey(c => c.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+
         }
     }
 }
