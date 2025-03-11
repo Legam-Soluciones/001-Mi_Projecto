@@ -20,8 +20,12 @@ namespace BugTracker.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Ticket>>> GetTickets()
         {
-            return await _context.Tickets.ToListAsync();
+            return await _context.Tickets
+                .Include(t => t.User) // Incluir datos del usuario
+                .Include(t => t.Comments) // Incluir comentarios si existen
+                .ToListAsync();
         }
+
 
         // ✅ POST: api/tickets
         [HttpPost]
@@ -33,24 +37,38 @@ namespace BugTracker.Controllers
             }
 
             // Verificar si el usuario existe en la base de datos
-            var userExists = await _context.Users.FindAsync(ticket.UserId);
-            if (userExists == null)
+            var user = await _context.Users.FindAsync(ticket.UserId);
+
+            /*var tickets = await _context.Tickets.Include(t => t.User).ToListAsync();
+            return Ok(tickets);*/
+
+            if (user == null)
             {
                 return BadRequest("El usuario no existe.");
             }
+            ticket.User = user;
 
-            // Asegurar que no haya conflicto con Entity Framework (detachear user)
-            ticket.User = null;
-
-            // Agregar y guardar en la base de datos
+            ticket.User = null; // Detach para evitar conflicto de seguimiento
             _context.Tickets.Add(ticket);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetTickets), new { id = ticket.Id }, ticket);
-            try
+            // Asegurar que no haya conflicto con Entity Framework(detachear User)
+            _context.Entry(ticket).Reference(t => t.User).IsModified = false;
+
+            /*// Asegurar que no haya conflicto con Entity Framework (detachear user)
+            ticket.User = null;*/
+
+            ticket.User = null; // Detach para evitar conflicto de seguimiento
+            _context.Tickets.Add(ticket);
+            await _context.SaveChangesAsync();
+
+            try // ERROR: Este bloque está después del return (nunca se ejecuta)
             {
+                // Agregar y guardar en la base de datos
                 _context.Tickets.Add(ticket);
                 await _context.SaveChangesAsync();
+
+                return CreatedAtAction(nameof(GetTickets), new { id = ticket.Id }, ticket);
             }
             catch (Exception ex)
             {

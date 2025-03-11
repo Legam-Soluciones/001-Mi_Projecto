@@ -27,6 +27,7 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
+    builder.Services.AddSwaggerGen();
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
