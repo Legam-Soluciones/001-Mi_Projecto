@@ -1,5 +1,6 @@
 using BugTracker.Data;
 using Microsoft.EntityFrameworkCore;
+using BugTracker.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

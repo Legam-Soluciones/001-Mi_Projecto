@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using BugTracker.Models;
+
 namespace BugTracker.Models
 {
     public class User
