@@ -40,6 +40,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();  // ✅ IMPORTANTE: Mapea los controladores
 
+app.UseDeveloperExceptionPage();
+
 app.Run();
 
 app.Run();

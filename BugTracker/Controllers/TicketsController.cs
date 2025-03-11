@@ -59,8 +59,11 @@ namespace BugTracker.Controllers
             /*// Asegurar que no haya conflicto con Entity Framework (detachear user)
             ticket.User = null;*/
 
-            ticket.User = null; // Detach para evitar conflicto de seguimiento
-            /*_context.Tickets.Add(ticket);
+            // Desasociamos el usuario para evitar duplicados
+            ticket.User = null;
+
+            /*ticket.User = null; // Detach para evitar conflicto de seguimiento
+            _context.Tickets.Add(ticket);
             await _context.SaveChangesAsync();*/
 
             try // ERROR: Este bloque está después del return (nunca se ejecuta)
