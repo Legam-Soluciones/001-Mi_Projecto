@@ -40,6 +40,12 @@ namespace BugTracker.Controllers
                 return BadRequest("Todos los campos son obligatorios.");
             }
 
+            var userExists = await _context.Users.FindAsync(ticket.UserId);
+            if (userExists == null)
+            {
+                return BadRequest("El usuario no existe.");
+            }
+
             _context.Tickets.Add(ticket);
             await _context.SaveChangesAsync();
 
