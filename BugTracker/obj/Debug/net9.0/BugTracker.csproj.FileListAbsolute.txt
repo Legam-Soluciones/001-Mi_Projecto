@@ -37,6 +37,9 @@ H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\bin\Debug\net9.0\Microsoft.Ope
 H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
 H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
 H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\bin\Debug\net9.0\Mono.TextTemplating.dll
+H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\bin\Debug\net9.0\System.ClientModel.dll
 H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\bin\Debug\net9.0\System.CodeDom.dll
 H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\bin\Debug\net9.0\System.Composition.AttributedModel.dll
@@ -153,6 +156,3 @@ H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\obj\Debug\net9.0\refint\BugTra
 H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\obj\Debug\net9.0\BugTracker.pdb
 H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\obj\Debug\net9.0\BugTracker.genruntimeconfig.cache
 H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\obj\Debug\net9.0\ref\BugTracker.dll
-H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
-H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-H:\001.4 PROYECTO UMCA\001-Mi_Projecto\BugTracker\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
